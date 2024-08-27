@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require("mongoose");
 const User = require('./models/User');
 const Post = require('./models/Post');
+const Contact = require('./models/Contact');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
@@ -34,6 +35,25 @@ app.post('/register', async (req, res) => {
         console.log(e);
         res.status(400).json(e);
       }
+});
+
+//Contact Request
+
+app.post('/contact', async (req, res) => {
+  const {name, email,phone, message} = req.body;
+  try{
+      const contactDoc = await Contact.create({
+        name,
+        email,
+        phone,
+        message,
+      });
+   
+      res.json(contactDoc);
+    } catch(e) {
+      console.log(e);
+      res.status(400).json(e);
+    }
 });
 
 
