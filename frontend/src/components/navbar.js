@@ -10,7 +10,7 @@ function Navbar() {
   const {setUserInfo,userInfo} = useContext(UserContext);
 
   useEffect(() => {
-    fetch('https://foodies-blog.vercel.app/profile', {
+    fetch('http://localhost:5000/profile', {
       credentials: 'include', // Ensure credentials like cookies are included
     })
     .then(response => response.json())
@@ -23,7 +23,7 @@ function Navbar() {
   }, []);
 
   function logout() {
-    fetch('https://foodies-blog.vercel.app/logout', {
+    fetch('http://localhost:5000/logout', {
       credentials: 'include',
       method: 'POST',
     });

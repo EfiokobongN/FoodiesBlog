@@ -28,7 +28,7 @@ export default function Post({
         <Link to={`/post/${_id}`} className="btn2">Read more</Link>
     </div>
     <div className="imgBx">
-        <img src={"https://foodies-blog.vercel.app/" + file} alt="" className="fitBg"/>
+        <img src={"http://localhost:5000/" + file} alt="" className="fitBg"/>
     </div>
 </section>
   );
