@@ -22,6 +22,10 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose.connect('mongodb+srv://faithdb:faithdb:1999ime.@alxproject.ji10y.mongodb.net/?retryWrites=true&w=majority&appName=alxproject')
 
+app.get("/", (req, res) => {
+res.json("Deployed to vercel Successful");
+});
+
 app.post('/register', async (req, res) => {
     const {username, useremail,password} = req.body;
     try{
