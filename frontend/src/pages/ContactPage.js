@@ -19,7 +19,7 @@ export default function ContactPage() {
       message,  // Ensure this is correctly set
     };
   
-    const response = await fetch('https://foodies-blog.vercel.app/contact', {
+    const response = await fetch('http://localhost:4000/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

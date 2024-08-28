@@ -15,16 +15,30 @@ const fs = require('fs');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
-app.use(cors({credentials:true,origin:['https://foodies-blog-frontend.vercel.app/'], methods:['POST', 'PUT', 'PUT']}));
+app.use(cors({credentials:true,origin:['https://foodies-blog-frontend.vercel.app'], methods:['POST', 'PUT', 'PUT']}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://faithdb:faithdb:1999ime.@alxproject.ji10y.mongodb.net/?retryWrites=true&w=majority&appName=alxproject')
 
-app.get("/", (req, res) => {
-res.json("Deployed to vercel Successful");
-});
+const username = 'faithdb';
+const password = '1999ime.'; // URL-encoded password
+const clusterUrl = 'alxproject.ji10y.mongodb.net';
+const dbName = 'faithdb'; // Replace with your database name
+
+const connectionString = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority`;
+
+mongoose.connect(connectionString)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Failed to connect to MongoDB', err));
+
+
+
+//mongoose.connect('mongodb+srv://faithdb:faithdb:1999ime.@alxproject.ji10y.mongodb.net/?retryWrites=true&w=majority&appName=alxproject')
+
+app.get("/", (req, res) => 
+  res.status(200).json({message: "Deployed to vercel Successful"})
+  )
 
 app.post('/register', async (req, res) => {
     const {username, useremail,password} = req.body;
