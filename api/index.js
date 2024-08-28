@@ -17,12 +17,9 @@ const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
 //app.use(cors({credentials:true,origin:['https://foodies-blog-frontend.vercel.app'], methods:['POST', 'PUT', 'PUT']}));
 app.use(cors({
-  credentials: true, // Allow credentials to be sent
-  origin: ['https://foodies-blog-frontend.vercel.app'], // Allowed origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  origin: 'https://foodies-blog-frontend.vercel.app', // Allow this origin
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
-
 app.use(express.json());
 
 app.use(express.json());
@@ -193,6 +190,10 @@ app.post('/login', async (req,res) => {
     res.json(postDoc);
   })
 
-app.listen(4000);
+//app.listen(4000);
+
+app.listen(5000, () => {
+  console.log('Server running on port 5000');
+});
 
 //1999ime.

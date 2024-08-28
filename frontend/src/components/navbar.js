@@ -8,13 +8,17 @@ import "./Post3.css";
 function Navbar() {
 
   const {setUserInfo,userInfo} = useContext(UserContext);
+
   useEffect(() => {
     fetch('https://foodies-blog.vercel.app/profile', {
-      credentials: 'include',
-    }).then(response => {
-      response.json().then(userInfo => {
-        setUserInfo(userInfo);
-      });
+      credentials: 'include', // Ensure credentials like cookies are included
+    })
+    .then(response => response.json())
+    .then(userInfo => {
+      setUserInfo(userInfo);
+    })
+    .catch(error => {
+      console.error('Error fetching user info:', error);
     });
   }, []);
 
