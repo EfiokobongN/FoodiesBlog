@@ -16,10 +16,12 @@ const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
 //app.use(cors({credentials:true,origin:['https://foodies-blog-frontend.vercel.app'], methods:['POST', 'PUT', 'PUT']}));
-app.use(cors({
-  origin: 'https://foodies-blog-frontend.vercel.app', // Allow this origin
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-}));
+//app.use(cors({
+ // origin: 'https://foodies-blog-frontend.vercel.app', // Allow this origin
+  //credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+//}));
+
+app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
 
 app.use(express.json());
