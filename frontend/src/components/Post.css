@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-/* root values */
+
 :root{
     --container-color: #1a1e21;
     --second-color: #57b846;
@@ -47,7 +47,7 @@ a{
     color: #fff;
 }
 
-/* Header */
+
 header{
     position: fixed;
     top: 0;
@@ -116,7 +116,7 @@ header.shadow .logo{
     left: 0;
     width: 100%;
     min-height: 440px;
-    background-color: rgba(0, 0, 0, 0.3); /* Black with 5% opacity */
+    background-color: rgba(0, 0, 0, 0.3); 
     z-index: 1;
 }
 
@@ -543,7 +543,7 @@ footer p{
     }
 }
 
-/* Footer Media Query */
+
 @media (max-width: 991px){
     footer{
         padding: 40px;

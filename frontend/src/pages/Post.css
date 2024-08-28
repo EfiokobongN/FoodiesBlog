@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-/* root values */
+
 :root{
     --container-color: #1a1e21;
     --second-color: rgba(77, 228, 255);
@@ -47,7 +47,7 @@ a{
     color: #fff;
 }
 
-/* Header */
+
 header{
     position: fixed;
     top: 0;
@@ -527,7 +527,7 @@ footer p{
     }
 }
 
-/* Footer Media Query */
+
 @media (max-width: 991px){
     footer{
         padding: 40px;

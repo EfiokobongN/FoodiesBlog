@@ -17,3 +17,5 @@ YOU CAN CLONE THE REPO FROM USING THIS LINKED: https://github.com/EfiokobongN/fr
 AUTHOR : EFIOKOBONG NELSON
 
 ALL RIGHT ALX FINAL PROJECT
+
+all comments in css file remove
