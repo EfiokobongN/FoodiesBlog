@@ -12,7 +12,7 @@ export default function PostPage() {
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/post/${id}`).then((response) => {
+    fetch(`http://localhost:4000/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -29,7 +29,7 @@ export default function PostPage() {
               
               <img
                 className="img-fluid w-100"
-                src={`http://localhost:5000/${postInfo.file}`}
+                src={`http://localhost:4000/${postInfo.file}`}
                 style={{ objectFit: "cover" }}
               />
               <div className="overlay position-relative bg-light">
