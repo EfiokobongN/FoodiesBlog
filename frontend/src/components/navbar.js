@@ -11,14 +11,11 @@ function Navbar() {
 
   useEffect(() => {
     fetch('http://localhost:5000/profile', {
-      credentials: 'include', // Ensure credentials like cookies are included
-    })
-    .then(response => response.json())
-    .then(userInfo => {
-      setUserInfo(userInfo);
-    })
-    .catch(error => {
-      console.error('Error fetching user info:', error);
+      credentials: 'include',
+    }).then(response => {
+      response.json().then(userInfo => {
+        setUserInfo(userInfo);
+      });
     });
   }, []);
 
