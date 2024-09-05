@@ -22,6 +22,8 @@ export default function LoginPage() {
 			alert('registration failed');
 		  }
 	  }
+
+	  
     return (
         <>
         
